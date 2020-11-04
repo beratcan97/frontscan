@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { GetSourceService } from 'src/app/services/get-source.service';
 
 @Component({
   selector: 'file-selector',
@@ -8,21 +9,26 @@ import { FormBuilder } from '@angular/forms';
 })
 export class FileSelectorComponent implements OnInit {
 
-  form;
+  form: FormGroup;
 
   constructor(
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private getSourceService: GetSourceService
+    ) { }
 
 
   ngOnInit(): void {
-    //this.createForm();
     this.form = this.fb.group({
       url: ''
     });
   }
 
-
   clicked() {
-    console.log(this.form.value);
+    this.getData(this.form.value.url);
+  }
+
+  getData(url): void {
+    const trestt = this.getSourceService.getSource(url);
+    console.log(trestt);
   }
 }
