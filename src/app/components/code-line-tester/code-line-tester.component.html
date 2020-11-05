@@ -1,0 +1,7 @@
+<form [formGroup]="form">
+    <div class="form-group">
+      <label for="url">TS code to test</label>
+      <textarea class="form-control" id="url" formControlName="url"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="checkCode()">Scan code</button>
+  </form>

@@ -6,12 +6,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { FileSelectorComponent } from './components/file-selector/file-selector.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CodeLineTesterComponent } from './components/code-line-tester/code-line-tester.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FileSelectorComponent,
+    CodeLineTesterComponent,
   ],
   imports: [
     BrowserModule,
